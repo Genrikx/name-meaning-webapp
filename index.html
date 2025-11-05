@@ -86,14 +86,11 @@ tg.MainButton.color = "#2cab37";
 
 function handleButton(id, label, payload) {
     document.getElementById(id).addEventListener("click", function () {
-        if (tg.MainButton.isVisible) tg.MainButton.hide();
-        else {
-            tg.MainButton.setText(`Узнать про ${label}`);
-            tg.MainButton.show();
-            tg.MainButton.onClick = function () {
-                tg.sendData(payload);
-            }
-        }
+        tg.MainButton.setText(`Узнать про ${label}`);
+        tg.MainButton.show();
+        tg.MainButton.onClick(function () {
+            tg.sendData(payload);
+        });
     });
 }
 
