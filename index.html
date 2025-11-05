@@ -2,118 +2,87 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Значение имени</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body { margin:0;padding:0;font-size:18px;color:#222;background:#f5f5f5; }
-        .container { max-width:390px; margin:auto; }
-        .inner { display:grid;grid-template-columns:1fr 1fr;grid-gap:15px; }
-        .item { text-align:center; }
-        .btn { display:inline-block;padding:10px 20px;border:none;background:rgb(248,168,24);border-radius:10px;color:#fff;font-weight:700;}
-        .btn:hover {background:lightgreen;}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container { 
+            max-width: 390px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h3 {
+            margin-bottom: 20px;
+            color: #222;
+            font-size: 24px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            background: rgb(248,168,24);
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:active {
+            background: #e09610;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <h3>Узнай значение имени</h3>
-    <div class="inner">
-        <div class="item">
-            <button id="btn_alexander" class="btn">Александр</button>
-        </div>
-        <div class="item">
-            <button id="btn_maksim" class="btn">Максим</button>
-        </div>
-        <div class="item">
-            <button id="btn_ivan" class="btn">Иван</button>
-        </div>
-        <div class="item">
-            <button id="btn_artem" class="btn">Артём</button>
-        </div>
-        <div class="item">
-            <button id="btn_dmitrii" class="btn">Дмитрий</button>
-        </div>
-        <div class="item">
-            <button id="btn_nikita" class="btn">Никита</button>
-        </div>
-        <div class="item">
-            <button id="btn_mikhail" class="btn">Михаил</button>
-        </div>
-        <div class="item">
-            <button id="btn_daniil" class="btn">Даниил</button>
-        </div>
-        <div class="item">
-            <button id="btn_egor" class="btn">Егор</button>
-        </div>
-        <div class="item">
-            <button id="btn_andrei" class="btn">Андрей</button>
-        </div>
-        <div class="item">
-            <button id="btn_elena" class="btn">Елена</button>
-        </div>
-        <div class="item">
-            <button id="btn_svetlana" class="btn">Светлана</button>
-        </div>
-        <div class="item">
-            <button id="btn_olga" class="btn">Ольга</button>
-        </div>
-        <div class="item">
-            <button id="btn_tatiana" class="btn">Татьяна</button>
-        </div>
-        <div class="item">
-            <button id="btn_natalya" class="btn">Наталья</button>
-        </div>
-        <div class="item">
-            <button id="btn_marina" class="btn">Марина</button>
-        </div>
-        <div class="item">
-            <button id="btn_irina" class="btn">Ирина</button>
-        </div>
-        <div class="item">
-            <button id="btn_anastasia" class="btn">Анастасия</button>
-        </div>
-        <div class="item">
-            <button id="btn_anna" class="btn">Анна</button>
-        </div>
-        <div class="item">
-            <button id="btn_oksana" class="btn">Оксана</button>
-        </div>
+    <div class="grid">
+        <button class="btn" onclick="selectName('Александра', 'alexander')">Александр</button>
+        <button class="btn" onclick="selectName('Максима', 'maksim')">Максим</button>
+        <button class="btn" onclick="selectName('Ивана', 'ivan')">Иван</button>
+        <button class="btn" onclick="selectName('Артёма', 'artem')">Артём</button>
+        <button class="btn" onclick="selectName('Дмитрия', 'dmitrii')">Дмитрий</button>
+        <button class="btn" onclick="selectName('Никиту', 'nikita')">Никита</button>
+        <button class="btn" onclick="selectName('Михаила', 'mikhail')">Михаил</button>
+        <button class="btn" onclick="selectName('Даниила', 'daniil')">Даниил</button>
+        <button class="btn" onclick="selectName('Егора', 'egor')">Егор</button>
+        <button class="btn" onclick="selectName('Андрея', 'andrei')">Андрей</button>
+        <button class="btn" onclick="selectName('Елену', 'elena')">Елена</button>
+        <button class="btn" onclick="selectName('Светлану', 'svetlana')">Светлана</button>
+        <button class="btn" onclick="selectName('Ольгу', 'olga')">Ольга</button>
+        <button class="btn" onclick="selectName('Татьяну', 'tatiana')">Татьяна</button>
+        <button class="btn" onclick="selectName('Наталью', 'natalya')">Наталья</button>
+        <button class="btn" onclick="selectName('Марину', 'marina')">Марина</button>
+        <button class="btn" onclick="selectName('Ирину', 'irina')">Ирина</button>
+        <button class="btn" onclick="selectName('Анастасию', 'anastasia')">Анастасия</button>
+        <button class="btn" onclick="selectName('Анну', 'anna')">Анна</button>
+        <button class="btn" onclick="selectName('Оксану', 'oksana')">Оксана</button>
     </div>
 </div>
-<script>
-let tg = window.Telegram.WebApp;
-tg.expand();
-tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#2cab37";
 
-function handleButton(id, label, payload) {
-    document.getElementById(id).addEventListener("click", function () {
-        tg.MainButton.setText(`Узнать про ${label}`);
+<script>
+    let tg = window.Telegram.WebApp;
+    tg.expand();
+    tg.MainButton.textColor = "#FFFFFF";
+    tg.MainButton.color = "#2cab37";
+
+    function selectName(label, payload) {
+        tg.MainButton.setText('Узнать про ' + label);
         tg.MainButton.show();
-        tg.MainButton.onClick = function () {
+        tg.MainButton.onClick(function() {
             tg.sendData(payload);
         });
-    });
-}
-
-handleButton("btn_alexander", "Александра", "alexander");
-handleButton("btn_maksim", "Максима", "maksim");
-handleButton("btn_ivan", "Ивана", "ivan");
-handleButton("btn_artem", "Артёма", "artem");
-handleButton("btn_dmitrii", "Дмитрия", "dmitrii");
-handleButton("btn_nikita", "Никиту", "nikita");
-handleButton("btn_mikhail", "Михаила", "mikhail");
-handleButton("btn_daniil", "Даниила", "daniil");
-handleButton("btn_egor", "Егора", "egor");
-handleButton("btn_andrei", "Андрея", "andrei");
-handleButton("btn_elena", "Елену", "elena");
-handleButton("btn_svetlana", "Светлану", "svetlana");
-handleButton("btn_olga", "Ольгу", "olga");
-handleButton("btn_tatiana", "Татьяну", "tatiana");
-handleButton("btn_natalya", "Наталью", "natalya");
-handleButton("btn_marina", "Марину", "marina");
-handleButton("btn_irina", "Ирину", "irina");
-handleButton("btn_anastasia", "Анастасию", "anastasia");
-handleButton("btn_anna", "Анну", "anna");
-handleButton("btn_oksana", "Оксану", "oksana");
+    }
 </script>
 </body>
 </html>
