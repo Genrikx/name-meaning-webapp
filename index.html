@@ -142,8 +142,6 @@
     <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
-        tg.MainButton.textColor = "#FFFFFF";
-        tg.MainButton.color = "#2cab37";
 
         const nameMeanings = {
             'alexander': 'Александр — мужское имя греческого происхождения. Означает "защитник людей", "оберегающий муж". Александры обычно смелые, решительные и обладают лидерскими качествами.',
@@ -176,15 +174,7 @@
             
             // Прокручиваем к значению
             document.getElementById('meaningBox').scrollIntoView({ behavior: 'smooth' });
-            
-            // Также отправляем в Telegram бот
-            tg.MainButton.setText('Узнать про ' + label);
-            tg.MainButton.show();
         }
-
-        tg.MainButton.onClick = function() {
-            tg.sendData(document.getElementById('meaningTitle').textContent);
-        };
     </script>
 </body>
 </html>
